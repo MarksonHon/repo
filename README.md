@@ -16,7 +16,8 @@ iwr -useb 'https://raw.fastgit.org/kidonng/scoop-install/fastgit/install.ps1' | 
 After installing Scoop, you should install git a first:
 
 ```pwsh
-scoop install 
+scoop install git
+```
 
 ## 2. Add sushi bucket
 
