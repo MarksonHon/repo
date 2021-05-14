@@ -21,5 +21,6 @@
             "ClashDotNet.exe",
             "Clash .NET"
         ]
-    ]
+    ],
+    "extract_dir": "Clash .NET 1.0.4"
 }
