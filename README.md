@@ -34,3 +34,6 @@ scoop bucket add clashdotnet https://github.com/MarksonHon/repo/
 ```pwsh
 scoop install clashdotnet
 ```
+
+TIP: If you are a Windows 7 or Windows 8.1 user, you'd better install `PowerShell Core` to make sure that Scoop could run correctly.
+<https://github.com/PowerShell/powershell/releases>
