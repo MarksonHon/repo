@@ -8,12 +8,7 @@ Thanks to: <https://github.com/kidonng/sushi>
 
 Just follow <https://scoop.sh/>
 
-Or you can use this command to get better speed in China (thanks to [kidonng](https://github.com/kidonng)):
-
-```pwsh
-Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-iwr -useb 'https://raw.fastgit.org/kidonng/scoop-install/fastgit/install.ps1' | iex
-```
+Gitee's installer mirror: <https://gitee.com/RubyKids/scoop-cn>
 
 After installing Scoop, you should install git a first:
 
