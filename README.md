@@ -47,3 +47,10 @@ scoop clean clashdotnet
 ## TIPS: 
 1. Windows 7 users should install [Microsoft .NET Framework 4.8](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0) at first.
 2. Windows 7 and Windows 8.1 users should install [`PowerShell`](https://aka.ms/powershell-release?tag=stable) at first and run `scoop` in **`PowerShell`** but NOT `Windows PowerShell` or you might meet error(s).
+3. You should [set proxy to `git`](https://gist.github.com/evantoli/f8c23a37eb3558ab8765) to update buckets if you are in China, and you should add a terminal proxy to make sure that `scoop` works fine.
+
+```pwsh
+set http_proxy=http://proxyserver:1000 ### 1000 means your proxy server's port
+set https_proxy=http://proxyserver:1000 
+```
+If you are using a proxy software such as Shadowsocks-Windows, proxyserver will be `localhost` or `127.0.0.1`.
