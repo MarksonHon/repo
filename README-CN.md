@@ -1,4 +1,4 @@
-# 一个 Scoop 仓库，提供 Clash .NET
+# 一个提供 Clash .NET 的 Scoop 仓库
 
 特别鸣谢 <https://github.com/kidonng/sushi>
 
