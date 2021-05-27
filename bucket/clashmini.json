@@ -1,5 +1,5 @@
 {
-    "version": "0.1.1",
+    "version": "0.1.1-1",
     "description": "A GUI provide a simple GUI for clash on windows platform.",
     "homepage": "https://github.com/Clash-Mini/Clash.Mini",
     "license": "AGPL-3.0",
@@ -19,5 +19,8 @@
             "Clash.Mini"
         ]
     ],
-    "persist":  "Profile"
+    "persist": [
+        "Profile",
+        "config.yaml"
+    ]
 }
