@@ -1,5 +1,7 @@
 # A bucket for Scoop providing Clash .NET 
 
+[中文版本](https://github.com/MarksonHon/repo/blob/main/README-CN.md)
+
 Thanks to: <https://github.com/kidonng/sushi>
 
 ## Install Clash .NET
