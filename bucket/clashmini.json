@@ -1,16 +1,16 @@
 {
-    "version": "0.1.1-1",
+    "version": "0.1.1-2",
     "description": "A GUI provide a simple GUI for clash on windows platform.",
     "homepage": "https://github.com/Clash-Mini/Clash.Mini",
     "license": "AGPL-3.0",
     "architecture": {
         "64bit": {
             "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/0.1.1/Clash.Mini.v0.1.1.x64.7z",
-            "hash": "08D1649F65803F762BF4956411B55151E165D9A47AFB2457C6D763B3B46CFB6D"
+            "hash": "8600efcdee04e7ede71050a759da3548b89da83ac2be511c8358915ba62f0c56"
         },
         "32bit": {
             "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/0.1.1/Clash.Mini.v0.1.1.x86.7z",
-            "hash": "A0CB99F61DCA622704FDFDA95D659110C98B1CD607021FE1F414EC3E76FF75D2"
+            "hash": "0be5b416a524acfc2e8a656ef11c5e5521d9910f90df970e102e9be1950747d8"
         }
     },
     "shortcuts": [
