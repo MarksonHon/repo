@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/0.1.1/Clash.Mini.v0.1.1.x64.7z",
-            "hash": "8600efcdee04e7ede71050a759da3548b89da83ac2be511c8358915ba62f0c56"
+            "hash": "c04aa6dd8953fbf0f743d2bb01dde254f343a1485ef6754d523135ebd9613eec"
         },
         "32bit": {
             "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/0.1.1/Clash.Mini.v0.1.1.x86.7z",
