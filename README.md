@@ -4,7 +4,7 @@
 
 Thanks to: <https://github.com/kidonng/sushi>
 
-## Install Clash .NET
+## Install Scoop & add buckets
 
 ### 1. Install Scoop
 
@@ -27,23 +27,30 @@ Just follow <https://github.com/kidonng/sushi>
 ```pwsh
 scoop bucket add clashdotnet https://github.com/MarksonHon/repo/
 ```
+## Install apps
 
-### 4. Install Clash .NET
+### Clash .NET
 
 ```pwsh
 scoop install clashdotnet
 ```
 
-## Update Clash .NET
+### Clash.Mini
 
 ```pwsh
-scoop update clashdotnet ### or use scoop update "*" to upgrade all scoop packages.
+scoop install clashmini
+```
+
+## Update apps
+
+```pwsh
+scoop update; scoop update "*"
 ```
 
 ## Remove old version(s)
 
 ```pwsh 
-scoop clean clashdotnet
+scoop cleanup "*"
 ```
 
 ## TIPS: 
