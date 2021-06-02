@@ -1,5 +1,5 @@
 {
-    "version": "1.1.2-1",
+    "version": "1.1.2-2",
     "description": "A Clash GUI Proxy For Windows Based On .NET 5",
     "homepage": "https://github.com/ClashDotNetFramework/ClashDotNetFramework",
     "license": "Closed source",
@@ -20,21 +20,26 @@
         "$ClashDotNetPID = Get-Process -name ClashDotNet -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
         "if ([String]::IsNullOrEmpty($ClashDotNetPID)) {",
         "Write-Output 'Clash .NET is not running.' ",
+        "Write-Output '' > $env:temp/ClashDotNetRestart.txt ",
         "}",
         "else {",
         "Write-Output 'Clash .NET is running, stop it and install a new version.' ",
-        "Stop-Process $ClashDotNetPID",
-        "Stop-Process -Name clash",
-        "Stop-Process -Name SubConverter.exe",
+        "Stop-Process $ClashDotNetPID -ErrorAction Ignore",
+        "Stop-Process -Name clash -ErrorAction Ignore",
+        "Stop-Process -Name SubConverter -ErrorAction Ignore",
+        "Write-Output 'Are you OK?' > $env:temp/ClashDotNetRestart.txt ",
         "}"
     ],
-    "post_install":[
-        "if ([String]::IsNullOrEmpty($xrayPID)) {",
-        "",
+    "post_install": [
+        "$ClashDotNetBin = $env:home + '/scoop/apps/clashdotnet/current/ClashDotNet.exe'",
+        "$NeedRestart = Get-Content $env:temp/ClashDotNetRestart.txt",
+        "if ([String]::IsNullOrEmpty($NeedRestart)) {",
+        "Remove-Item $env:temp/ClashDotNetRestart.txt",
         "}",
         "else {",
-        "Write-Output 'Restart Clash .NET' ",
-        "Start-Process $dir/ClashDotNet.exe",
+        "Write-Output 'Starting new version of Clash .NET' ",
+        "Start-Process $ClashDotNetBin -WindowStyle Minimized",
+        "Remove-Item $env:temp/ClashDotNetRestart.txt",
         "}"
     ],
     "shortcuts": [
