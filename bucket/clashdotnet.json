@@ -1,5 +1,5 @@
 {
-    "version": "1.1.2",
+    "version": "1.1.2-1",
     "description": "A Clash GUI Proxy For Windows Based On .NET 5",
     "homepage": "https://github.com/ClashDotNetFramework/ClashDotNetFramework",
     "license": "Closed source",
@@ -16,6 +16,27 @@
             "hash": "8906bb8ebca63af23b75eaab07d8637b1b02a53c6a8ca15cbdeca06ed9d499d0"
         }
     },
+    "pre_install": [
+        "$ClashDotNetPID = Get-Process -name ClashDotNet -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
+        "if ([String]::IsNullOrEmpty($ClashDotNetPID)) {",
+        "Write-Output 'Clash .NET is not running.' ",
+        "}",
+        "else {",
+        "Write-Output 'Clash .NET is running, stop it and install a new version.' ",
+        "Stop-Process $ClashDotNetPID",
+        "Stop-Process -Name clash",
+        "Stop-Process -Name SubConverter.exe",
+        "}"
+    ],
+    "post_install":[
+        "if ([String]::IsNullOrEmpty($xrayPID)) {",
+        "",
+        "}",
+        "else {",
+        "Write-Output 'Restart Clash .NET' ",
+        "Start-Process $dir/ClashDotNet.exe",
+        "}"
+    ],
     "shortcuts": [
         [
             "ClashDotNet.exe",
