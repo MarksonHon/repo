@@ -16,29 +16,31 @@
             "hash": "8906bb8ebca63af23b75eaab07d8637b1b02a53c6a8ca15cbdeca06ed9d499d0"
         }
     },
-    "pre_install": [
-        "$ClashDotNetPID = Get-Process -name ClashDotNet -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
-        "if ([String]::IsNullOrEmpty($ClashDotNetPID)) {",
-        "Write-Output 'Clash .NET is not running.' ",
-        "Write-Output '' > $env:temp/ClashDotNetRestart.txt ",
-        "}",
-        "else {",
-        "Write-Output 'Clash .NET is running, stop it and install a new version.' ",
-        "Stop-Process $ClashDotNetPID -ErrorAction Ignore",
-        "Stop-Process -Name clash -ErrorAction Ignore",
-        "Stop-Process -Name SubConverter -ErrorAction Ignore",
-        "Write-Output 'Are you OK?' > $env:temp/ClashDotNetRestart.txt ",
-        "}"
-    ],
+    "installer": {
+        "script": [
+            "$ClashDotNetPID = Get-Process -name ClashDotNet -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
+            "if ([String]::IsNullOrEmpty($ClashDotNetPID)) {",
+            "Write-Output 'Clash .NET is not running.' ",
+            "Write-Output '' > $env:temp/ClashDotNetRestart.txt ",
+            "}",
+            "else {",
+            "Write-Output 'Clash .NET is running, stop it and install a new version.' ",
+            "Stop-Process $ClashDotNetPID -ErrorAction Ignore",
+            "Stop-Process -Name clash -ErrorAction Ignore",
+            "Stop-Process -Name SubConverter -ErrorAction Ignore",
+            "Write-Output 'Are you OK?' > $env:temp/ClashDotNetRestart.txt ",
+            "}"
+        ]
+    },
     "post_install": [
-        "$ClashDotNetBin = $env:home + '/scoop/apps/clashdotnet/current/ClashDotNet.exe'",
+        "$ClashDotNetBin = $env:UserProfile + '/scoop/apps/clashdotnet/current/ClashDotNet.exe'",
         "$NeedRestart = Get-Content $env:temp/ClashDotNetRestart.txt",
         "if ([String]::IsNullOrEmpty($NeedRestart)) {",
         "Remove-Item $env:temp/ClashDotNetRestart.txt",
         "}",
         "else {",
         "Write-Output 'Starting new version of Clash .NET' ",
-        "Start-Process $ClashDotNetBin -WindowStyle Minimized",
+        "Start-Process $ClashDotNetBin",
         "Remove-Item $env:temp/ClashDotNetRestart.txt",
         "}"
     ],
