@@ -1,16 +1,16 @@
 {
-    "version": "0.1.2.1-pre",
+    "version": "0.1.3-pre",
     "description": "A GUI provide a simple GUI for clash on windows platform.",
     "homepage": "https://github.com/Clash-Mini/Clash.Mini",
     "license": "AGPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/v0.1.2.1-pre/Clash.Mini.v0.1.2.1-pre.x64.7z",
-            "hash": "10490dffa049979139061a3473c7ac059bf1f55cb5a67e617221f7edb88fc1cd"
+            "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/v0.1.3-pre/Clash.Mini_v0.1.3-pre_x64.7z",
+            "hash": "2C292D7490986D309CFBC422C3BADB0B105C61488D98FB7EE02F64EBAE05D5A1"
         },
         "32bit": {
-            "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/v0.1.2.1-pre/Clash.Mini.v0.1.2.1-pre.x86.7z",
-            "hash": "f8590038e9947f03696bdf17d24503f7c457be5b5999acf64672da5030abc6fa"
+            "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/v0.1.3-pre/Clash.Mini_v0.1.3-pre_x86.7z",
+            "hash": "A3345B97FDC0D012FE7AF60BFE626010D4D950973034103151D6455F18C3BB87"
         }
     },
     "shortcuts": [
@@ -22,5 +22,31 @@
     "persist": [
         "Profile",
         "config.yaml"
+    ],
+    "installer": {
+        "script": [
+            "$ClashMiniPID = Get-Process -name Clash.Mini -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
+            "if ([String]::IsNullOrEmpty($Clash.MiniPID)) {",
+            "Write-Output 'ClashMini is not running.' ",
+            "Write-Output '' > $env:temp/ClashMiniRestart.txt ",
+            "}",
+            "else {",
+            "Write-Output 'ClashMini is running, stop it and install a new version.' ",
+            "Stop-Process $ClashMiniPID -ErrorAction Ignore",
+            "Write-Output 'Are you OK?' > $env:temp/ClashMiniRestart.txt ",
+            "}"
+        ]
+    },
+    "post_install": [
+        "$ClashMiniBin = $env:UserProfile + '/scoop/apps/clashmini/current/Clash.Mini.exe'",
+        "$NeedRestart = Get-Content $env:temp/ClashMiniRestart.txt",
+        "if ([String]::IsNullOrEmpty($NeedRestart)) {",
+        "Remove-Item $env:temp/ClashMiniRestart.txt",
+        "}",
+        "else {",
+        "Write-Output 'Starting new version of Clash.Mini' ",
+        "Start-Process $ClashMiniBin",
+        "Remove-Item $env:temp/ClashMiniRestart.txt",
+        "}"
     ]
 }
