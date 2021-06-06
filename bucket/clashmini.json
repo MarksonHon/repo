@@ -23,7 +23,7 @@
         "Profile",
         "config.yaml"
     ],
-    "installer": {
+    "pre_install": {
         "script": [
             "$ClashMiniPID = Get-Process -name Clash.Mini -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
             "if ([String]::IsNullOrEmpty($Clash.MiniPID)) {",
