@@ -6,11 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/v0.1.3-pre/Clash.Mini_v0.1.3-pre_x64.7z",
-            "hash": "2C292D7490986D309CFBC422C3BADB0B105C61488D98FB7EE02F64EBAE05D5A1"
+            "hash": "627B7B3BE5B7C4519EF4B8F19D1552E8E8D56700B24FA46CFAE41F6BFBB226DB"
         },
         "32bit": {
             "url": "https://github.com/Clash-Mini/Clash.Mini/releases/download/v0.1.3-pre/Clash.Mini_v0.1.3-pre_x86.7z",
-            "hash": "A3345B97FDC0D012FE7AF60BFE626010D4D950973034103151D6455F18C3BB87"
+            "hash": "05DAC144755F0BBEB781017F74CA65A8F33208BEA62394CBCCE6696B77C9C393"
         }
     },
     "shortcuts": [
@@ -23,7 +23,7 @@
         "Profile",
         "config.yaml"
     ],
-    "pre_install": {
+    "installer": {
         "script": [
             "$ClashMiniPID = Get-Process -name Clash.Mini -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
             "if ([String]::IsNullOrEmpty($Clash.MiniPID)) {",
