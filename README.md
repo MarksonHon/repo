@@ -59,7 +59,8 @@ scoop cleanup "*"
 3. You should [set proxy to `git`](https://gist.github.com/evantoli/f8c23a37eb3558ab8765) to update buckets if you are in China, and you should add a terminal proxy to make sure that `scoop` works fine.
 
 ```pwsh
-set http_proxy=http://proxyserver:1000 ### 1000 means your proxy server's port
-set https_proxy=http://proxyserver:1000 
+$env:HTTP_PROXY="http://127.0.0.1:11223" ### 11223 means your proxy server's port
+$env:HTTPS_PROXY="http://127.0.0.1:11223"
+$env:ALL_PROXY="socks5://127.0.0.1:11223"
 ```
 If you are using a proxy software such as Shadowsocks-Windows, proxyserver will be `localhost` or `127.0.0.1`.
