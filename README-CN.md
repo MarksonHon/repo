@@ -58,7 +58,8 @@ scoop cleanup "*"
 3. 如果你在中国，你应该 [给`git`配置代理](https://gist.github.com/evantoli/f8c23a37eb3558ab8765) 以便更新仓库，你应该添加一个终端代理来确保 `scoop` 工作正常。
 
     ```pwsh
-    set http_proxy=http://proxyserver:1000 ###1000表示你的代理服务器的端口
-    set https_proxy=http://proxyserver:1000 
+    $env:HTTP_PROXY="http://127.0.0.1:11223"
+    $env:HTTPS_PROXY="http://127.0.0.1:11223"
+    $env:ALL_PROXY="socks5://127.0.0.1:11223"
     ```
     如果你使用代理软件，如 Shadowsocks-Windows，proxyserver将是`localhost`或`127.0.0.1`。
