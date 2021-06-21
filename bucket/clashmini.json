@@ -22,31 +22,5 @@
     "persist": [
         "Profile",
         "config.yaml"
-    ],
-    "installer": {
-        "script": [
-            "$ClashMiniPID = Get-Process -name Clash.Mini -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
-            "if ([String]::IsNullOrEmpty($Clash.MiniPID)) {",
-            "Write-Output 'ClashMini is not running.' ",
-            "Write-Output '' > $env:temp/ClashMiniRestart.txt ",
-            "}",
-            "else {",
-            "Write-Output 'ClashMini is running, stop it and install a new version.' ",
-            "Stop-Process $ClashMiniPID -ErrorAction Ignore",
-            "Write-Output 'Are you OK?' > $env:temp/ClashMiniRestart.txt ",
-            "}"
-        ]
-    },
-    "post_install": [
-        "$ClashMiniBin = $env:UserProfile + '/scoop/apps/clashmini/current/Clash.Mini.exe'",
-        "$NeedRestart = Get-Content $env:temp/ClashMiniRestart.txt",
-        "if ([String]::IsNullOrEmpty($NeedRestart)) {",
-        "Remove-Item $env:temp/ClashMiniRestart.txt",
-        "}",
-        "else {",
-        "Write-Output 'Starting new version of Clash.Mini' ",
-        "Start-Process $ClashMiniBin",
-        "Remove-Item $env:temp/ClashMiniRestart.txt",
-        "}"
     ]
 }
