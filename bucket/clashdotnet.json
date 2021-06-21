@@ -1,5 +1,5 @@
 {
-    "version": "1.2.0",
+    "version": "1.2.0-2",
     "description": "A Clash GUI Proxy For Windows Based On .NET 5",
     "homepage": "https://github.com/ClashDotNetFramework/ClashDotNetFramework",
     "license": "Closed source",
@@ -12,38 +12,10 @@
             "hash": "1d8e1874bc69b064d374d638b99aff051a8444e910cfcdd3360a004f5c7413db"
         },
         "32bit": {
-            "url": "hhttps://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.0/Clash.NET.1.2.0.x86.7z",
+            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.0/Clash.NET.1.2.0.x86.7z",
             "hash": "a5ee2f6d02fb3d027c89e4573de6f67b7413c601eedd0664e5575bbdbaf9b167"
         }
     },
-    "installer": {
-        "script": [
-            "$ClashDotNetPID = Get-Process -name ClashDotNet -ErrorAction Ignore | Select-Object id | ForEach-Object -Process { $_.id }",
-            "if ([String]::IsNullOrEmpty($ClashDotNetPID)) {",
-            "Write-Output 'Clash .NET is not running.' ",
-            "Write-Output '' > $env:temp/ClashDotNetRestart.txt ",
-            "}",
-            "else {",
-            "Write-Output 'Clash .NET is running, stop it and install a new version.' ",
-            "Stop-Process $ClashDotNetPID -ErrorAction Ignore",
-            "Stop-Process -Name clash -ErrorAction Ignore",
-            "Stop-Process -Name SubConverter -ErrorAction Ignore",
-            "Write-Output 'Are you OK?' > $env:temp/ClashDotNetRestart.txt ",
-            "}"
-        ]
-    },
-    "post_install": [
-        "$ClashDotNetBin = $env:UserProfile + '/scoop/apps/clashdotnet/current/ClashDotNet.exe'",
-        "$NeedRestart = Get-Content $env:temp/ClashDotNetRestart.txt",
-        "if ([String]::IsNullOrEmpty($NeedRestart)) {",
-        "Remove-Item $env:temp/ClashDotNetRestart.txt",
-        "}",
-        "else {",
-        "Write-Output 'Starting new version of Clash .NET' ",
-        "Start-Process $ClashDotNetBin",
-        "Remove-Item $env:temp/ClashDotNetRestart.txt",
-        "}"
-    ],
     "shortcuts": [
         [
             "ClashDotNet.exe",
