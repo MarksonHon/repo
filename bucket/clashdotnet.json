@@ -1,5 +1,5 @@
 {
-    "version": "1.2",
+    "version": "1.2.0",
     "description": "A Clash GUI Proxy For Windows Based On .NET 5",
     "homepage": "https://github.com/ClashDotNetFramework/ClashDotNetFramework",
     "license": "Closed source",
@@ -50,5 +50,5 @@
             "Clash .NET"
         ]
     ],
-    "extract_dir": "Clash .NET 1.2"
+    "extract_dir": "Clash .NET 1.2.0"
 }
