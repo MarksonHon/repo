@@ -1,5 +1,5 @@
 {
-    "version": "1.2.1",
+    "version": "1.2.3",
     "description": "A Clash GUI Proxy For Windows Based On .NET 5",
     "homepage": "https://github.com/ClashDotNetFramework/ClashDotNetFramework",
     "license": "Closed source",
@@ -8,12 +8,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.1/Clash.NET.1.2.1.x64.7z",
-            "hash": "a72ff36a113dbc3ead64b2c25038bf6fd2bd722edea0219e745e08600b1e283a"
+            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.3/Clash.NET.1.2.3.x64.7z",
+            "hash": "e0adf1c1dd11b48d89b3090d7709c7adef20c4352701b52a796de5a974004afa"
         },
         "32bit": {
-            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.1/Clash.NET.1.2.1.x86.7z",
-            "hash": "220fa55d4665e29b9897c1dda4488af5ae1c63bdb291c9e2c5e6599e5b3621d3"
+            "url": "https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases/download/v1.2.3/Clash.NET.1.2.3.x86.7z",
+            "hash": "9141ec64b4bf6582eed4b73b726b28bc6db9152589af52bd595d811db246483d"
         }
     },
     "shortcuts": [
@@ -22,5 +22,5 @@
             "Clash .NET"
         ]
     ],
-    "extract_dir": "Clash .NET 1.2.1"
+    "extract_dir": "Clash .NET 1.2.3"
 }
