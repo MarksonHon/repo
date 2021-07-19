@@ -54,8 +54,8 @@ scoop cleanup "*"
 ## 提示: 
 
 1. Windows 7 用户应该先安装[Microsoft .NET Framework 4.8](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0)。
-2. Windows 7 和 Windows 8.1 用户应首先安装[`PowerShell`](https://aka.ms/powershell-release?tag=stable)，并在 **`PowerShell`** 中运行`scoop`，而不是`Windows PowerShell`，否则你可能会遇到错误。
-3. 如果你在中国，你应该 [给`git`配置代理](https://gist.github.com/evantoli/f8c23a37eb3558ab8765) 以便更新仓库，你应该添加一个终端代理来确保 `scoop` 工作正常。
+2. 你应首先安装[`PowerShell`](https://aka.ms/powershell-release?tag=stable)，并在 **`PowerShell`** 中运行`scoop`，而不是`Windows PowerShell`，否则你可能会遇到错误。
+3. 如果你在中国，你应该 [给`git`配置代理](https://gist.github.com/evantoli/f8c23a37eb3558ab8765) 以便更新仓库，同时你应该添加一个终端代理来确保 `scoop` 工作正常。
 
     ```pwsh
     $env:HTTP_PROXY="http://127.0.0.1:11223"
