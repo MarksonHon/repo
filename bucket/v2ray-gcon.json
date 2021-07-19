@@ -1,5 +1,5 @@
 {
-    "version": "1.5.6.0-2",
+    "version": "1.5.6.0-3",
     "description": "Graphic configer for v2ray-core.",
     "homepage": "https://github.com/vrnobody/V2RayGCon/",
     "license": "GPL-3.0",
@@ -14,14 +14,13 @@
         }
     },
     "pre_install": [
-        "$IsConfig = Test-path -Path $dir/userSettings.json",
-        "if ($IsConfig -eq 'True') {",
-        "    Write-Output 'Config will be kept' ",
-        "}",
-        "else {",
-            "echo [] > $dir/userSettings.json;",
-            "echo [] > $dir/userSettings.bak;",
+        "cp $dir/userSettings.json $env:temp/userSettings.json -ErrorAction Ignore;",
+        "cp $dir/userSettings.bak $env:temp/userSettings.bak -ErrorAction Ignore;",
         "}"
+    ],
+    "post_install": [
+        "cp $env:temp/userSettings.bak  $dir/userSettings.bak -ErrorAction Ignore;",
+        "cp $env:temp/userSettings.json $dir/userSettings.json -ErrorAction Ignore;"
     ],
     "shortcuts": [
         [
@@ -30,8 +29,6 @@
         ]
     ],
     "persist": [
-        "core",
-        "userSettings.json",
-        "userSettings.bak"
+        "core"
     ]
 }
