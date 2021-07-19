@@ -15,8 +15,7 @@
     },
     "pre_install": [
         "cp $dir/userSettings.json $env:temp/userSettings.json -ErrorAction Ignore;",
-        "cp $dir/userSettings.bak $env:temp/userSettings.bak -ErrorAction Ignore;",
-        "}"
+        "cp $dir/userSettings.bak $env:temp/userSettings.bak -ErrorAction Ignore;"
     ],
     "post_install": [
         "cp $env:temp/userSettings.bak  $dir/userSettings.bak -ErrorAction Ignore;",
