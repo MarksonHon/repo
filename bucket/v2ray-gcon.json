@@ -19,8 +19,8 @@
         "    Write-Output 'Config will be kept' ",
         "}",
         "else {",
-            "Write-Host '[]' > $dir/userSettings.json;",
-            "Write-Host '[]' > $dir/userSettings.bak;",
+            "echo [] > $dir/userSettings.json;",
+            "echo [] > $dir/userSettings.bak;",
         "}"
     ],
     "shortcuts": [
