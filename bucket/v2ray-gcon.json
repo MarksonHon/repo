@@ -1,0 +1,26 @@
+{
+    "version": "1.5.6.0",
+    "description": "Graphic configer for v2ray-core.",
+    "homepage": "https://github.com/vrnobody/V2RayGCon/",
+    "license": "GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/vrnobody/V2RayGCon/releases/download/1.5.6/V2RayGCon.zip",
+            "hash": "3533057fd7bb5d6ecd9dfcb50f535c8f262de7fe9ba20bf345ddfabf2a6576ff"
+        },
+        "32bit": {
+            "url": "https://github.com/vrnobody/V2RayGCon/releases/download/1.5.6/V2RayGCon.zip",
+            "hash": "3533057fd7bb5d6ecd9dfcb50f535c8f262de7fe9ba20bf345ddfabf2a6576ff"
+        }
+    },
+    "shortcuts": [
+        [
+            "V2RayGCon.exe",
+            "V2RayGCon"
+        ]
+    ],
+    "persist": [
+        "userSettings.json",
+        "userSettings.bak"
+    ]
+}
