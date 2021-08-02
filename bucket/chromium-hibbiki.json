@@ -1,16 +1,16 @@
 {
-    "version": "92.0.4515.107-r885287",
+    "version": "92.0.4515.107-r885287-1",
     "description": "Stable Chromium builds for Windows with sync by Hibbiki.",
     "homepage": "https://github.com/Hibbiki/",
     "license": "BSD",
     "architecture": {
         "64bit": {
             "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v92.0.4515.107-r885287/chrome.sync.7z",
-            "hash": "sha1:91aa3100f155d717c4f2e87a08a2a39136051ea5 "
+            "hash": "sha1:91aa3100f155d717c4f2e87a08a2a39136051ea5"
         },
         "32bit": {
             "url": "https://github.com/Hibbiki/chromium-win32/releases/download/v92.0.4515.107-r885287/chrome.sync.7z",
-            "hash": "sha1:b77fe99059759463e8cd1d4aa71879a2e29f9847 "
+            "hash": "sha1:b77fe99059759463e8cd1d4aa71879a2e29f9847"
         }
     },
     "shortcuts": [
