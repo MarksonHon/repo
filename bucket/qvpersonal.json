@@ -1,0 +1,18 @@
+{
+    "version": "3.0-beta1",
+    "homepage": "https://github.com/moodyhunter/QvPersonal",
+    "license": "GPLv3",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.17.1/Clash.for.Windows-0.17.1-win.7z",
+            "hash": "c5c0036df3d58ded0ee55f0ef62b243c90614dc927c4357eb11ae70506eff81f"
+        }
+    },
+    "shortcuts": [
+        [
+            "qv2ray.exe",
+            "Qv2ray QvPersonal"
+        ]
+    ],
+    "extract_dir":"installed"
+}
