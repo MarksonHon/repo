@@ -14,5 +14,5 @@
             "Qv2ray QvPersonal"
         ]
     ],
-    "extract_dir":"installed"
+    "extract_dir":"build/installed"
 }
