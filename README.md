@@ -1,3 +1,9 @@
+Moved to
+
+<https://gitlab.com/MarksonHo/sinnia>
+
+NO UPDATE ANYMORE HERE.
+
 # A bucket for Scoop providing Clash .NET 
 
 [中文版本](https://github.com/MarksonHon/repo/blob/main/README-CN.md)

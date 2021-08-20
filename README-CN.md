@@ -1,3 +1,8 @@
+移动到：
+<https://gitlab.com/MarksonHo/sinnia>
+
+此处不再更新。
+
 # 一个 Scoop 仓库
 
 特别鸣谢 <https://github.com/kidonng/sushi>
